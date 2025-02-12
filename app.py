@@ -1,3 +1,16 @@
+"""
+This code belongs to reshuk-code.
+Contact: business.reshuksapkota@gmail.com
+GitHub: https://github.com/reshuk-code
+
+This program is open source and built for a personal project.
+You are free to use, modify, and distribute this code for non-commercial purposes.
+However, commercial use of this code is strictly prohibited.
+
+© 2025 Reshuk Sapkota. All rights reserved.
+"""
+
+
 from connect import connect_db
 import random
 from send_mail import send_account_creation_email, send_login_notification_email, send_transaction_email
@@ -25,8 +38,8 @@ if not accounts.find_one({"account_number": ADMIN_ACCOUNT["account_number"]}):
 def generate_account_number():
     """Generate a unique 16-digit account number."""
     while True:
-        account_number = random.randint(10**15, (10**16) - 1)  # Generate a 16-digit number
-        if not accounts.find_one({"account_number": account_number}):  # Ensure uniqueness
+        account_number = random.randint(10**15, (10**16) - 1) 
+        if not accounts.find_one({"account_number": account_number}): 
             return account_number
 
 def create_account():
@@ -36,7 +49,7 @@ def create_account():
     email = input("Enter email: ")
     password = input("Enter password: ")
     account_type = input("Enter account type (savings/current): ")
-    balance = float(input("Enter initial balance: ") or 0)  # Default balance to 0 if not provided
+    balance = float(input("Enter initial balance: ") or 0)  
     
     account_number = generate_account_number()
     
@@ -51,7 +64,7 @@ def create_account():
         "haveCard": False,
     }
     
-    # Deduct the initial balance from the admin account
+   
     admin_account = accounts.find_one({"account_number": ADMIN_ACCOUNT["account_number"]})
     admin_account["balance"] += balance
     accounts.update_one({"account_number": ADMIN_ACCOUNT["account_number"]}, {"$set": {"balance": admin_account["balance"]}})
