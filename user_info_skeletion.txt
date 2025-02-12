@@ -1,0 +1,9 @@
+1.ACC number(16 digits)
+2.username(FirstName , LastName)
+3.address
+4.DOB
+5.Phone number
+6.E-mail
+7.amount(RS 0-default)
+7.statements
+8.doUserOwnCards(flase-default)
