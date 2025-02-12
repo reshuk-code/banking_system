@@ -1,3 +1,16 @@
+"""
+This code belongs to reshuk-code.
+Contact: business.reshuksapkota@gmail.com
+GitHub: https://github.com/reshuk-code
+
+This program is open source and built for a personal project.
+You are free to use, modify, and distribute this code for non-commercial purposes.
+However, commercial use of this code is strictly prohibited.
+
+© 2025 Reshuk Sapkota. All rights reserved.
+"""
+
+
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -8,19 +21,19 @@ EMAIL_PASSWORD = "password"
 
 def send_email(to_address, subject, message):
     try:
-        # Set up the server
+     
         server = smtplib.SMTP(host='smtp.gmail.com', port=587)
         server.starttls()
         server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         
-        # Create the email
+     
         email = MIMEMultipart()
         email['From'] = EMAIL_ADDRESS
         email['To'] = to_address
         email['Subject'] = subject
         email.attach(MIMEText(message, 'plain'))
         
-        # Send the email
+    
         server.send_message(email)
         server.quit()
         print(f"Email sent to {to_address}")
