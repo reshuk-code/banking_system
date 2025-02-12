@@ -3,8 +3,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # Email credentials
-EMAIL_ADDRESS = "business.reshuksapkota@gmail.com"
-EMAIL_PASSWORD = "tzer vgek dlzt pvxp"
+EMAIL_ADDRESS = "email"
+EMAIL_PASSWORD = "password"
 
 def send_email(to_address, subject, message):
     try:
