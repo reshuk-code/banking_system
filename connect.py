@@ -1,3 +1,16 @@
+"""
+This code belongs to reshuk-code.
+Contact: business.reshuksapkota@gmail.com
+GitHub: https://github.com/reshuk-code
+
+This program is open source and built for a personal project.
+You are free to use, modify, and distribute this code for non-commercial purposes.
+However, commercial use of this code is strictly prohibited.
+
+© 2025 Reshuk Sapkota. All rights reserved.
+"""
+
+
 import os
 import pymongo
 from dotenv import load_dotenv
